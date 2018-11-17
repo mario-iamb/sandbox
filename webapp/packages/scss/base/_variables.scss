@@ -1,0 +1,148 @@
+// Paths
+
+$font-path: '../fonts/';
+
+// Colours - prfix $c in front of all colours
+
+$c-white: #fff;
+$c-black: #000;
+$c-dark: #292929;
+$c-light: #808080;
+$c-primary: #0f6cb5;
+$c-secondary: #771b4a;
+$c-bg-alabaster: #f9f9f9;
+$c-bg-link-water: #f0f6fb;
+$c-bg-soft-peach: #f8f2f5;
+$c-bg-bridal-health: #fff9f3;
+$c-success: #29cf60;
+$c-warning: #eca827;
+$c-info: #2ac7e9;
+$c-error: #ff0b0d;
+
+// Venue Hire colours
+
+$purple: #771b4a;
+$secondary-purple: #6d1814;
+$purple-hover: #b17191;
+$blue: #1f1649;
+$grey-dark: #292929;
+$grey-medium: #555;
+$grey-light: #d8d8d8;
+$c-light-purple: #e8e5e8;
+
+// Out of styleguide
+
+$c-alto: #dadada;
+$c-seashell: #f1f1f1;
+
+// Breakpoints
+
+// Override bootstrap grid breakpoints and add addtional breakpoints
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+    xs: 0,
+  // Small screen / phone
+    sm: 576px,
+  // Medium screen / tablet
+    md: 768px,
+  // Large screen / small desktop
+    lg: 992px,
+  // Extra large screen / desktop
+    xl: 1280px,
+  // Extra extra large screen / wide desktop
+    xxl: 1440px
+);
+
+// Override include media
+
+$breakpoints: $grid-breakpoints;
+
+// Reusable Widths
+
+$grid-gutter-width: 36px;
+$container-width: 1140px;
+$outer-container-width: 1980px;
+$container-padding: 18px;
+$container-padding-thick: 32px;
+$site-search: 90px;
+$header-height: 90px;
+
+// Map of spacer vars
+
+$spacers: (
+  x-huge: 80px,
+  huge: 56px,
+  x-large: 48px,
+  large: 40px,
+  medium: 32px,
+  grid: $grid-gutter-width,
+  small: 24px,
+  v-small: 16px,
+  tiny: 8px,
+  x-tiny: 4px
+);
+
+// Pull out into individual vars for use within components
+
+$spacer-x-huge: map-get($spacers, 'x-huge');
+$spacer-huge: map-get($spacers, 'huge');
+$spacer-x-large: map-get($spacers, 'x-large');
+$spacer-large: map-get($spacers, 'large');
+$spacer-medium: map-get($spacers, 'medium');
+$spacer-grid: map-get($spacers, 'grid');
+$spacer-small: map-get($spacers, 'small');
+$spacer-v-small: map-get($spacers, 'v-small');
+$spacer-tiny: map-get($spacers, 'tiny');
+$spacer-x-tiny: map-get($spacers, 'x-tiny');
+
+/*
+
+Breakpoints for spacers - for example, this would generate the following medium spacers classes, after mixin is called in _setup.scss
+
+.spacer-medium
+.spacer-md-medium
+.spacer-lg-medium
+.spacer-sm-only-medium
+.spacer-md-only-medium
+.spacer-lg-only-medium
+
+*/
+
+$spacer-breakpoints: (
+  (
+    name: null,
+    mq: null
+  ),
+  (
+    name: 'md',
+    mq: (
+      '>=md'
+    )
+  ),
+  (
+    name: 'lg',
+    mq: (
+      '>=lg'
+    )
+  ),
+  (
+    name: 'sm-only',
+    mq: (
+      '<md'
+    )
+  ),
+  (
+    name: 'md-only',
+    mq: (
+      '>=md',
+      '<lg'
+    )
+  ),
+  (
+    name: 'lg-only',
+    mq: (
+      '>=lg'
+    )
+  )
+);
