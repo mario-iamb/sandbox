@@ -1,6 +1,154 @@
-@import 'base';
-
-p {
-    color: $c-success;
-    font-size: 20px;
+html {
+  background-color: $c-white;
+  font-size: 62.5%;
 }
+
+body {
+  @include t-base;
+  background-color: $c-white;
+  color: $grey-dark;
+}
+
+.container-fluid {
+  max-width: rem($container-width + $container-padding + $container-padding);
+  padding-left: rem($container-padding);
+  padding-right: rem($container-padding);
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: rem($outer-container-width);
+}
+
+.v-hidden {
+  @include v-hidden;
+}
+
+a {
+  color: $purple;
+  text-decoration: none;
+
+  @include hover-active-focus {
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+
+strong {
+  @include t-medium;
+}
+
+em {
+  @include t-light-italic;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  display: block;
+}
+
+h1,
+.h1 {
+  @include t-h1;
+}
+
+h2,
+.h2 {
+  @include t-h2;
+}
+
+h3,
+.h3 {
+  @include t-h3;
+}
+
+h4,
+.h4 {
+  @include t-h4;
+}
+
+h5,
+.h5 {
+  @include t-h5;
+}
+
+.button {
+  @include reset-button;
+  @include t-button;
+  background-color: $c-primary;
+  color: $c-white;
+  padding: rem(8px) rem(24px);
+  text-decoration: none;
+
+  @include hover-active-focus {
+    background-color: $c-secondary;
+    color: $c-white;
+    text-decoration: none;
+  }
+
+  &--wide {
+    @include media('>=lg') {
+      padding-left: rem(55px);
+      padding-right: rem(55px);
+    }
+  }
+}
+
+.button-link {
+  @include reset-button;
+  @include t-light;
+  color: $c-primary;
+  font-size: inherit;
+  line-height: inherit;
+  text-decoration: underline;
+  vertical-align: baseline;
+
+  @include hover-active-focus {
+    color: $c-secondary;
+    outline: none;
+  }
+}
+
+.video {
+  padding-bottom: percentage(1200 / 1920);
+  position: relative;
+
+  iframe {
+    height: 100% !important;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100% !important;
+  }
+}
+
+hr {
+  border-bottom: 1px solid $c-alto;
+  border-top: none;
+  margin-bottom: rem($spacer-v-small);
+
+  @include media('>=lg') {
+    margin-bottom: rem($spacer-small);
+  }
+}
+
+.caption {
+  @include t-caption;
+}
+
+.row--no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include generate-spacers;

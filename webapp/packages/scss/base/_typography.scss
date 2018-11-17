@@ -1,0 +1,378 @@
+/* stylelint-disable declaration-colon-newline-after */
+
+@font-face {
+  font-family: 'gt-walsheim-light';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-light.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-light.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-light-oblique';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-light-oblique.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-light-oblique.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light-oblique.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light-oblique.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-light-oblique.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-regular';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-regular.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-regular.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-regular-oblique';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-regular-oblique.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-regular-oblique.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular-oblique.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular-oblique.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-regular-oblique.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-medium';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-medium.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-medium.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'gt-walsheim-medium-oblique';
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-medium-oblique.eot');
+  src: url('#{$font-path}gt-walsheim/gt-walsheim-medium-oblique.eot?#iefix') format('embedded-opentype'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium-oblique.woff2') format('woff2'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium-oblique.woff') format('woff'),
+    url('#{$font-path}gt-walsheim/gt-walsheim-medium-oblique.ttf') format('truetype');
+}
+
+// Main
+
+@mixin t-light {
+  font-family: 'gt-walsheim-light', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin t-light-italic {
+  font-family: 'gt-walsheim-light-oblique', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin t-regular {
+  font-family: 'gt-walsheim-regular', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin t-regular-italic {
+  font-family: 'gt-walsheim-regular-oblique', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin t-medium {
+  font-family: 'gt-walsheim-medium', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin t-medium-italic {
+  font-family: 'gt-walsheim-medium-oblique', Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+@mixin type($font-size, $line-height) {
+  font-size: rem($font-size * 1px);
+  line-height: rem($line-height * 1px);
+}
+
+// Alt
+
+@mixin t-alt {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+}
+
+@mixin t-alt-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@mixin t-base {
+  @include t-light;
+  font-size: rem(16px);
+  line-height: 1.5;
+}
+
+// H1
+
+@mixin t-60-60 {
+  font-size: rem(60px);
+  line-height: rem(60px);
+}
+
+@mixin t-40-40 {
+  font-size: rem(40px);
+  line-height: rem(40px);
+}
+
+// H2
+
+@mixin t-32-36 {
+  font-size: rem(32px);
+  line-height: rem(36px);
+}
+
+// H3
+
+@mixin t-28-32 {
+  font-size: rem(28px);
+  line-height: rem(32px);
+}
+
+// Site Search
+
+@mixin t-22-23 {
+  font-size: rem(22px);
+  line-height: rem(23px);
+}
+
+// Small Quote
+
+@mixin t-24-28 {
+  font-size: rem(24px);
+  line-height: rem(28px);
+}
+
+// Paragraph small
+
+@mixin t-14-24 {
+  font-size: rem(14px);
+  line-height: rem(24px);
+}
+
+// Paragraph medium & h5
+
+@mixin t-16-24 {
+  font-size: rem(16px);
+  line-height: rem(24px);
+}
+
+// Paragraph large - Mobile
+
+@mixin t-20-26 {
+  font-size: rem(20px);
+  line-height: rem(26px);
+}
+
+// Paragraph large - desktop
+
+@mixin t-25-32 {
+  font-size: rem(25px);
+  line-height: rem(32px);
+}
+
+// CTA link
+
+@mixin t-16-20 {
+  font-size: rem(16px);
+  line-height: rem(20px);
+}
+
+// Image Caption
+
+@mixin t-12-20 {
+  font-size: rem(12px);
+  line-height: rem(20px);
+}
+
+// Label
+
+@mixin t-10-14 {
+  font-size: rem(10px);
+  line-height: rem(14px);
+}
+
+// quote {
+
+@mixin t-28-36 {
+  font-size: rem(28px);
+  line-height: rem(36px);
+}
+
+// Out of styleguide
+
+@mixin t-10-13 {
+  font-size: rem(10px);
+  line-height: rem(13px);
+}
+
+@mixin t-12-15 {
+  font-size: rem(12px);
+  line-height: rem(15px);
+}
+
+@mixin t-12-24 {
+  font-size: rem(12px);
+  line-height: rem(24px);
+}
+
+@mixin t-13-24 {
+  font-size: rem(13px);
+  line-height: rem(24px);
+}
+
+@mixin t-22-25 {
+  font-size: rem(22px);
+  line-height: rem(25px);
+}
+
+@mixin t-28-30 {
+  font-size: rem(28px);
+  line-height: rem(30px);
+}
+
+// Combos
+
+@mixin t-h1($color: $purple, $margin-bottom: $spacer-v-small, $margin-bottom-lg: $spacer-huge) {
+  @include t-40-40;
+  @include t-alt;
+  color: $color;
+  margin-bottom: rem($margin-bottom);
+
+  @include media('>=lg') {
+    @include t-60-60;
+    margin-bottom: rem($margin-bottom-lg);
+  }
+}
+
+@mixin t-h2($margin-bottom: $spacer-small) {
+  @include t-32-36;
+  @include t-alt;
+
+  @if $margin-bottom > 0 {
+    margin-bottom: rem($margin-bottom);
+  }
+}
+
+@mixin t-h3($margin-bottom: $spacer-v-small) {
+  @include t-28-32;
+  @include t-alt;
+
+  @if $margin-bottom > 0 {
+    margin-bottom: rem($margin-bottom);
+  }
+}
+
+@mixin t-h4($margin-bottom: $spacer-tiny) {
+  @include t-22-23;
+  @include t-alt;
+
+  @if $margin-bottom > 0 {
+    margin-bottom: rem($margin-bottom);
+  }
+}
+
+@mixin t-h5($margin-bottom: 0) {
+  @include t-16-24;
+  @include t-regular;
+
+  @if $margin-bottom > 0 {
+    margin-bottom: rem($margin-bottom);
+  }
+}
+
+@mixin t-navigation-mobile {
+  @include t-14-24;
+  letter-spacing: rem(1.6px);
+}
+
+@mixin t-navigation-lg {
+  @include t-12-24;
+  letter-spacing: rem(1px);
+}
+
+@mixin t-navigation-desktop {
+  @include t-13-24;
+  letter-spacing: rem(1.39px);
+}
+
+@mixin t-intro {
+  @include t-alt;
+  @include t-20-26;
+}
+
+@mixin t-intro-lg {
+  @include t-alt;
+  @include t-25-32;
+}
+
+@mixin t-button {
+  @include t-14-24;
+  @include t-regular;
+}
+
+@mixin t-aside-title {
+  @include t-medium;
+  @include t-14-24;
+}
+
+@mixin t-caption {
+  //@include t-light;
+  @include t-12-20;
+
+  @include media('>=lg') {
+    @include t-14-24;
+  }
+}
+
+@mixin t-quote {
+  @include t-regular;
+  @include t-24-28;
+
+  @include media('>=lg') {
+    @include t-28-36;
+  }
+}
+
+@mixin t-cta {
+  @include t-regular;
+  @include t-16-20;
+}
+
+@mixin t-inline-search {
+  @include t-regular;
+  @include t-16-24;
+}
+
+@mixin t-alt-h1 {
+  @include t-h1;
+  @include t-alt-italic;
+}
+
+@mixin t-label($margin-bottom: $spacer-tiny) {
+  @include t-10-14;
+  @include t-medium;
+  letter-spacing: rem(1.6px);
+  text-transform: uppercase;
+
+  @if $margin-bottom > 0 {
+    margin-bottom: rem($spacer-tiny);
+  }
+}
+
+@mixin tab-title {
+  @include t-regular;
+  @include t-16-24;
+
+  @include media('>=lg') {
+    @include t-alt;
+    @include t-22-23;
+  }
+}

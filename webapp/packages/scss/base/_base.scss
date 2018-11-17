@@ -4,6 +4,12 @@
 @import '../../../node_modules/bootstrap/scss/_variables';
 @import '../../../node_modules/bootstrap/scss/bootstrap-grid';
 
+// Include media for readable breakpoints
+
+@import '../../../node_modules/include-media/dist/include-media';
+
 @import 'mixins';
 @import 'functions';
 @import 'reset';
+@import 'typography';
+@import 'setup';
