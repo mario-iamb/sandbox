@@ -1,0 +1,31 @@
+{% block html_head_container %}
+
+	{% include 'molecules/html-header.twig' %}
+
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+<body{{ template_name ? ' id="' ~ template_name ~ '"'}} class="post-{{ post.id }}">
+
+	<div class="wrapper">
+
+		{# {% block header %}
+			{% include 'organisms/header.twig' %}
+		{% endblock %} #}
+
+        <div class="wrapper__content">
+		{% block content %}
+			<p>Sorry, no content</p>
+		{% endblock %}
+        </div>
+
+		{# {% block footer %}
+			{% include 'organisms/footer.twig' %}
+			{% include 'molecules/html-footer.twig' %}
+		{% endblock %} #}
+
+	</div>
+</body>
+</html>
