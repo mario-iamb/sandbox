@@ -44,12 +44,19 @@
             margin-bottom: rem($spacer-small);
         }
 
+        > *:last-child {
+            margin-bottom: 0;
+        }
+
         .banner--contacts & {
             @include t-22-23;
         }
 
         .banner--announcement & {
             color: $c-dark;
+            @include media('<md') {
+                @include t-20-26;
+            }
         }
 
         .banner--promotion & {
@@ -60,6 +67,7 @@
 
     &__cta-message {
         @include t-20-26;
+        margin-top: rem($spacer-small);
 
         a:hover {
             color: $purple;
@@ -146,6 +154,11 @@
         background-color: $c-white;
         padding-top: rem(80px);
         padding-bottom: rem(80px);
+
+        @include media('<md') {
+            padding-top: rem($spacer-small);
+            padding-bottom: rem($spacer-small);
+        }
     }
 
     &--promotion {

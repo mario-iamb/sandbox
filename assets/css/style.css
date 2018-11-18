@@ -3371,18 +3371,25 @@ hr {
     color: #fff; }
     .banner__message p {
       margin-bottom: 2.4rem; }
+    .banner__message > *:last-child {
+      margin-bottom: 0; }
     .banner--contacts .banner__message {
       font-size: 2.2rem;
       line-height: 2.3rem; }
     .banner--announcement .banner__message {
       color: #292929; }
+      @media (max-width: 767px) {
+        .banner--announcement .banner__message {
+          font-size: 2rem;
+          line-height: 2.6rem; } }
     .banner--promotion .banner__message {
       font-size: 2.2rem;
       line-height: 2.3rem;
       color: #292929; }
   .banner__cta-message {
     font-size: 2rem;
-    line-height: 2.6rem; }
+    line-height: 2.6rem;
+    margin-top: 2.4rem; }
     .banner__cta-message a:hover {
       color: #771b4a;
       text-decoration: none;
@@ -3456,6 +3463,10 @@ hr {
     background-color: #fff;
     padding-top: 8rem;
     padding-bottom: 8rem; }
+    @media (max-width: 767px) {
+      .banner--announcement {
+        padding-top: 2.4rem;
+        padding-bottom: 2.4rem; } }
   .banner--promotion {
     background-color: #f2f2f2;
     padding-top: 4.8rem;
