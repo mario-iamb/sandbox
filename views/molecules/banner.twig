@@ -1,0 +1,31 @@
+<section class="banner{% if type %} banner--{{ type }}{% endif %}">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                {% if content.sub_title %}
+                    <span class="banner__sub-title">{{ content.sub_title }}</span>
+                {% endif %}
+                {% if content.title %}
+                    <h2 class="banner__title">{{content.title}}</h2>
+                {% endif %}
+                    <div class="banner__message">
+                        {{content.message}}
+                    </div>
+                {% if content.links %}
+                    <ul class="banner__list">
+                        {% for link in content.links %}
+                        <li class="banner__list-item{% if link.class %} {{ link.class }}{% endif %}">
+                            <a class="banner__list-link" {% if link.target %}target="{{ link.target }}"{% endif %} href="{{ link.cta }}">{{link.cta_text}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if content.extra_message %}
+                    <div class="banner__cta-message">
+                        {{content.extra_message}}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

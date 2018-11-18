@@ -1,0 +1,156 @@
+.header {
+    width: 100%;
+    height: rem(150px);
+    background-color: $c-bg-link-water;
+    //margin-bottom: rem(50px);   
+}
+
+
+.banner {
+    width: 100%;
+    padding-top: rem(96px);
+    padding-bottom: rem(96px);
+    background-color: $blue;
+    text-align: center;
+    margin-bottom: rem(20px);
+
+    &__sub-title {
+        @include t-label;
+        display: block;
+        color: $grey-medium;
+    }
+
+    &__title {
+        @include t-h2;
+        color: $c-white;
+
+        .banner--announcement & {
+            color: $purple;
+            max-width: rem(534px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .banner--promotion & {
+            color: $blue;
+        }
+    }
+
+    &__message {
+        @include t-intro-lg;
+        color: $c-white;
+
+        p {
+            margin-bottom: rem($spacer-small);
+        }
+
+        .banner--contacts & {
+            @include t-22-23;
+        }
+
+        .banner--announcement & {
+            color: $c-dark;
+        }
+
+        .banner--promotion & {
+            @include t-22-23;
+            color: $grey-dark;
+        }
+    }
+
+    &__cta-message {
+        @include t-20-26;
+
+        a:hover {
+            color: $purple;
+            text-decoration: none;
+            border-bottom: 1px solid $purple;
+        }
+    }
+
+    &__list {
+        margin-top: rem($spacer-small);
+        display: flex;
+        justify-content: center;
+
+        @include media('<md') {
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &__list-item {
+        position: relative;
+
+        &--phone {
+            padding-left: rem(35px);
+
+            @include media('>=md') {
+                margin-right:rem(31px);
+            }
+
+            @include media('<md') {
+                margin-bottom:rem($spacer-tiny);
+            }
+            
+            &:before {
+                content: url(../images/phone-icon.svg);
+                position: absolute;
+                width: rem(25px);
+                height: rem(25px);
+                top: 0;
+                left: 0;
+            }
+        }
+
+        &--email {
+            padding-left: rem(40px);
+            
+            @include media('>=md') {
+                margin-left: rem(31px);
+            }
+            
+            &:before {
+                content: url(../images/mail-icon.svg);
+                position: absolute;
+                width: rem(29px);
+                height: rem(29px);
+                top: rem(4px);
+                left: 0;
+            }
+        }
+    }
+
+    &__list-link {
+        @include t-intro;
+        @include t-light;
+        color: $c-white;
+
+        @include media('<md') {
+            @include t-18-24;
+        }
+
+        &:hover {
+            color: $c-white;
+            text-decoration: none;
+            border-bottom: 1px solid $c-white;
+        }
+    }
+
+    &--contacts {
+        padding-top: rem(60px);
+        padding-bottom: rem(60px);
+    }
+
+    &--announcement {
+        background-color: $c-white;
+        padding-top: rem(80px);
+        padding-bottom: rem(80px);
+    }
+
+    &--promotion {
+        background-color: $c-bg-grey;
+        padding-top: rem($spacer-x-large);
+        padding-bottom: rem($spacer-x-large);
+    }
+}
