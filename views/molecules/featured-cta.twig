@@ -1,0 +1,44 @@
+<section class="featured-cta {{ content.align ? 'featured-cta--' ~ content.align }} {{ overlay ? 'featured-cta--' ~ overlay }}">
+    <div class="container-fluid">
+        <div class="row {% if content.align == 'center' %}justify-content-center{% endif %}">
+            {% if content.align == 'center' %}
+                <div class="col-12 col-md-6 d-flex flex-column">
+                    <h2 class="featured-cta__title">{{content.title}}</h2>
+                    <div class="row">
+                        <div class="col"><p class="featured-cta__copy">{{content.copy}}</p></div>
+                        {# {% for card in content.cards %}
+                            <div class="col-12 col-md featured-cta__copy">{{card.copy}}</div>
+                        {% endfor %} #}
+                    </div>
+                    {% include 'atoms/cta-button.twig' with {
+                        content: {
+                            url: content.cta.link,
+                            text: content.cta.text,
+                            target: content.cta.target,
+                        }
+                    } %}
+                </div>
+            {% else %}
+                <div class="col-12 col-md-5{% if content.align == 'right' %} offset-md-7{% endif %}">
+                    <h2 class="featured-cta__title">{{content.title}}</h2>
+                    <p class="featured-cta__copy">{{content.copy}}</p>
+                    {% include 'atoms/cta-button.twig' with {
+                        content: {
+                            url: content.cta.link,
+                            text: content.cta.text,
+                            target: content.cta.target,
+                        }
+                    } %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% include 'atoms/image.twig' with {
+        image: {
+            id: image_id,
+            width: 1980,
+            height: 580,
+        },
+        class: "featured-cta__background-image",
+    } %}
+</section>

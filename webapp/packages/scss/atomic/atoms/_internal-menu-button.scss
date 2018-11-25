@@ -1,0 +1,74 @@
+.internal-menu-button {
+    .no-js & {
+      @include v-hidden;
+    }
+  
+    @include media('<lg') {
+      @include reset-button;
+      align-items: center;
+      background-color: $c-primary;
+      color: $c-white;
+      display: flex;
+      justify-content: space-between;
+      padding: rem(16px) rem($container-padding);
+      width: 100%;
+    }
+  
+    @include media('>=lg') {
+      display: none;
+    }
+  
+    @include hover-active-focus {
+      @include media('<lg') {
+        outline: none;
+      }
+    }
+  
+    &--active {
+      @include media('<lg') {
+        .internal-menu-button__show-hide-icon {
+          transform: rotate(.75turn);
+        }
+      }
+    }
+  
+    &__show-hide-icon {
+      @include media('<lg') {
+        flex: 0 0 auto;
+        transform: rotate(.25turn);
+        width: rem(16px);
+  
+        path {
+          fill: $c-white;
+        }
+  
+        .no-js & {
+          display: none;
+        }
+      }
+    }
+  
+    &__text {
+      @include media('<lg') {
+        @include t-label;
+        margin-bottom: 0;
+        margin-right: rem($container-padding);
+  
+        &--hide {
+          display: none;
+        }
+      }
+    }
+  
+    &--active {
+      .internal-menu-button__text {
+        &--hide {
+          display: block;
+        }
+  
+        &--show {
+          display: none;
+        }
+      }
+    }
+}

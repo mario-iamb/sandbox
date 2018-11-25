@@ -1,4 +1,11 @@
 @import 'base/base';
 
+//atoms
+@import 'atomic/atoms/internal-menu-button';
+
+//Molecules
+@import 'atomic/molecules/featured-cta';
+@import 'atomic/molecules/secondary-nav';
+
 // Organisms
 @import 'atomic/organisms/header';

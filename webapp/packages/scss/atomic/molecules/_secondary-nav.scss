@@ -1,0 +1,93 @@
+.secondary-nav {
+    &__inner {
+      @include media('<lg') {
+        .js & {
+          height: 0;
+          overflow: hidden;
+        }
+  
+        &--active {
+          .js & {
+            height: auto;
+          }
+        }
+      }
+    }
+  
+    &__content {
+      @include media('<lg') {
+        padding-top: rem($spacer-v-small);
+      }
+    }
+  
+    &__title {
+      @include t-28-30;
+      @include t-alt;
+      color: $purple;
+      display: block;
+      margin-bottom: rem($spacer-v-small);
+      padding-left: rem($container-padding);
+      padding-right: rem($container-padding);
+    }
+  
+    &__title-link {
+      display: block;
+      text-decoration: none;
+  
+      @include hover-active-focus {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  
+    &__item {
+      position: relative;
+  
+      &:after {
+        background-color: $c-alto;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: 1px;
+        left: rem($container-padding);
+        position: absolute;
+        width: calc(100% - #{rem($container-padding + $container-padding)});
+  
+        @include media('>=lg') {
+          left: 0;
+          width: 100%;
+        }
+      }
+  
+      &--active {
+        > .secondary-nav__link {
+          color: $purple;
+          text-decoration: underline;
+  
+          @include hover-active-focus {
+            color: $purple;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    &__link {
+      @include t-14-24;
+      color: $c-dark;
+      display: block;
+      padding: rem(8px) rem($container-padding) rem(8px);
+      text-decoration: none;
+  
+      @include hover-active-focus {
+        background-color: $c-light-purple;
+        color: $c-dark;
+        text-decoration: none;
+      }
+  
+      @include media('>=lg') {
+        padding-bottom: rem(11px);
+        padding-top: rem(11px);
+      }
+    }
+}

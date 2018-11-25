@@ -1,0 +1,24 @@
+<div class="secondary-nav js-secondary-nav">
+    <button class="internal-menu-button secondary-nav__show-hide js-secondary-nav-trigger">
+        <span class="internal-menu-button__text internal-menu-button__text--show">{{ content.links.fir_level.title }}</span>
+        <span class="internal-menu-button__text internal-menu-button__text--hide">Close</span>
+        {# {% include "atoms/icon.twig" with {
+            class : 'internal-menu-button__show-hide-icon',
+            icon: 'arrow'
+        } %} #}
+    </button>
+    <div class="secondary-nav__inner js-secondary-nav-show-hide">
+        <div class="secondary-nav__content">
+            <strong class="secondary-nav__title">
+                <a class="secondary-nav__title-link" href="{{ content.links.fir_level.link }}">{{ content.links.fir_level.title }}</a>
+            </strong>
+            <ul class="secondary-nav__list">
+                {% for sec_level in content.links.sec_level %}
+                    <li class="secondary-nav__item{% if sec_level.active %} secondary-nav__item--active{% endif %}">
+                        <a class="secondary-nav__link" href="{{ sec_level.link }}">{{ sec_level.title }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

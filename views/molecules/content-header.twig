@@ -1,0 +1,56 @@
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            
+            <div class="col nav__holder order-lg-2">
+                {% include 'molecules/secondary-nav.twig' with {
+                    content: {
+                        links:{
+                            fir_level: {
+                                title: "Your Event",
+                                link: "/"
+                            },
+                            sec_level: [
+                                {
+                                    title: "Conferences and Meetings",
+                                    link: "/",
+                                },
+                                {
+                                    title: "Lunches and Dinners",
+                                    link: "/",
+                                },
+                                {
+                                    title: "Special Events",
+                                    link: "/",
+                                },
+                                {
+                                    title: "Receptions",
+                                    link: "/",
+                                },
+                                {
+                                    title: "Awards and Ceremonies",
+                                    link: "/",
+                                    active: true,
+                                },
+                                {
+                                    title: "Weddings",
+                                    link: "/",
+                                },
+                                {
+                                    title: "Food, Drink and Service",
+                                    link: "/",
+                                },
+                            ],
+                        }
+                    }
+                } %}
+            </div>
+            
+            <div class="col-12 col-lg-8 order-lg-1">
+                <h1>Conferences and Meetings</h1>
+                <p>If you are looking for an intimate meeting room for focused discussion or a large conference space for blue sky thinking, Lincoln’s Inn offers a range of options to suit your needs. The Inn’s historic rooms; the Great Hall, Old Hall and Old Court Room can add an air of gravitas to your event.  Our lecture theatre with adjacent meeting rooms in the Ashworth Centre offers a stylish contemporary event setting. </p>
+                <p>We can accommodate small meetings from 10 guests up to a conference for 300 delegates.</p>
+            </div>
+        </div>
+    </div>
+</section>

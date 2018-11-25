@@ -167,3 +167,36 @@
         padding-bottom: rem($spacer-x-large);
     }
 }
+
+.content-header {
+    width: 100%;
+    margin: rem(50px) 0;
+
+    .nav__holder {
+        flex: 0 0 100%;
+        padding-left: 0;
+        padding-right: 0;
+        
+        @include media('<=lg') {
+            margin-bottom: rem($spacer-medium);
+        }
+    
+        @include media('>lg') {
+          flex: 0 0 rem(258px);
+          margin-right:rem($container-padding);
+        }
+    }
+
+    h1 {
+        @include t-h1;
+        color: $purple;
+        margin-bottom:rem($spacer-x-large)!important;
+    }
+
+    p {
+        @include t-intro-lg;
+        padding-bottom: rem($spacer-small);
+    }
+
+}
+

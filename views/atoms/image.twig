@@ -1,0 +1,13 @@
+{% if use_cdn %}
+    {% set img_subdir = TimberImage(image.id).src | replace({
+        (uploads_dir.baseurl): ''
+    }) %}
+    {% if image.width %}{% set w = 'w_' ~ image.width ~ ',' %}
+    {% endif %}
+    {% if image.height %}{% set h = 'h_' ~ image.height ~ ',' %}
+    {% endif %}
+
+    <img {% if class %} class="{{ class }}" {% endif %} src="{{ cdn_url }}{{ w }}{{ h }}f_auto,c_fill,g_auto/{{ cdn_folder }}{{ img_subdir }}" alt="{{TimberImage(image.id).alt}}"/>
+{% else %}
+    <img {% if class %} class="{{ class }}" {% endif %} src="{{ Image(image.id).src|resize(image.width, image.height, 'center') }}" alt="{{TimberImage(image.id).alt}}"/>
+{% endif %}
