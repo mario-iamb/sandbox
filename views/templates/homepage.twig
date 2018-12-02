@@ -50,6 +50,65 @@
 
     {% include 'molecules/content-header.twig'  %}
 
-    
+    {% include 'molecules/space-info.twig' with {
+        content: {
+            video_id: "https://www.youtube.com/embed/OhIgEWxrPdM",
+            capacities: {
+                title: "Total Capacity",
+                items: [
+                    {
+                        name: "Theatre",
+                        capacity: "130",
+                    },
+                    {
+                        name: "Dinner/Dance",
+                        capacity: "92",
+                    },
+                    {
+                        name: "Reception",
+                        capacity: "200",
+                    },
+                    {
+                        name: "Boardroom",
+                        capacity: "40",
+                    },
+                    {
+                        name: "Dinner/Dance",
+                        capacity: "130",
+                    },
+                ],
+            },
+            features: {
+                title: "Feature",
+                items: [
+                    {
+                        name: "Natural Light",
+                        icon: "light",
+                    },
+                    {
+                        name: "3 phase power",
+                        icon: "power",
+                    },
+                    {
+                        name: "Build in PA system",
+                        icon: "speaker",
+                    },
+                    {
+                        name: "Natural Light",
+                        icon: "light",
+                    },
+                    {
+                        name: "3 phase power",
+                        icon: "power",
+                    },
+                    {
+                        name: "Features",
+                        icon: "glass",
+                    },
+                ],
+            },
+            info: "<p>The Crypt is included in hire and suitable for registration, breakout and receptions</p>",
+        }
+    }  %}
 
 {% endblock %}

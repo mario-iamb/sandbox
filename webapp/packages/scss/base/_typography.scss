@@ -228,6 +228,16 @@
   line-height: rem(24px);
 }
 
+@mixin t-14-16 {
+  font-size: rem(14px);
+  line-height: rem(16px);
+}
+
+@mixin t-14-20 {
+  font-size: rem(14px);
+  line-height: rem(20px);
+}
+
 @mixin t-18-24 {
   font-size: rem(18px);
   line-height: rem(24px);

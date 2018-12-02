@@ -1,0 +1,34 @@
+<section class="space-info">
+    <div class="row row--no-gutters">
+        <div class="space-info__media">
+            <div class="mario-holder">
+                <div class="space-info__video-wrapper">
+                    <iframe width="640" height="360" src="{{content.video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" data-gtm-yt-inspected-8836769_10="true" id="705599174"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="space-info__content">
+            <div class="space-info__content-holder">
+                <span class="space-info__list-title">{{content.capacities.title}}</span>
+                <ul class="space-info__list space-info__list--capacities">
+                    {% for item in content.capacities.items %}
+                        <li class="space-info__list-item">
+                            <span>{{item.name}}</span>
+                            <span>{{item.capacity}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <span class="space-info__list-title">{{content.features.title}}</span>
+                <ul class="space-info__list space-info__list--features">
+                    {% for item in content.features.items %}
+                        <li class="space-info__list-item{% if item.icon %} space-info__list-item--{{ item.icon }}{% endif %}">
+                            <span>{{item.name}}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+                {{ content.info }}
+            </div>
+        </div>
+    </div>
+</section>
