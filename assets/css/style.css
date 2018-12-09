@@ -3546,7 +3546,32 @@ hr {
   margin-bottom: 10rem; }
   .space-info__media {
     width: calc(100% - 630px);
-    float: left; }
+    float: left;
+    position: relative; }
+  .space-info .new-holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .space-info .new-holder iframe {
+      width: 100%;
+      height: 100%; }
   .space-info .mario-holder {
     width: 100%;
     height: 100%;
