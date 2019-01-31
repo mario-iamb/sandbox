@@ -1,0 +1,21 @@
+{% if menu %}
+    <ul class="{% if class %} {{ class }}{% endif %}{{ classes | join(' ') }}">
+        {% for item in menu %}
+            <li class="{{ item.classes | join(' ') }}">
+                <a href="{{ item.link }}">
+                    {{ item.title }}
+                </a>
+                {% include "molecules/menu.twig" with {
+                    'menu' : item.get_children
+                } %}
+            </li>
+        {% endfor %}
+        {% if static_link %}
+            <li class="{{ menu.0.classes | join(' ') }}">
+                <a href="{{ static_link.url }}">
+                    {{ static_link.title }}
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

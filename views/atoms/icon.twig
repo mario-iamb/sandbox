@@ -1,0 +1,8 @@
+{% set icon = icon | default(false) %}
+
+{% if icon %}
+    {% set iconPath = 'assets/images/icons/' ~ icon ~ '.svg' %}
+    <span class="icon icon--{{ icon }}{% if class %} {{ class }}{% endif %}">
+        {% include iconPath %}
+    </span>
+{% endif %}

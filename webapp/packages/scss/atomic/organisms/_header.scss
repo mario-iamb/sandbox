@@ -1,202 +1,172 @@
 .header {
-    width: 100%;
-    height: rem(150px);
-    background-color: $c-bg-link-water;
-    //margin-bottom: rem(50px);   
-}
-
-
-.banner {
-    width: 100%;
-    padding-top: rem(96px);
-    padding-bottom: rem(96px);
-    background-color: $blue;
-    text-align: center;
-    margin-bottom: rem(20px);
-
-    &__sub-title {
-        @include t-label;
-        display: block;
-        color: $grey-medium;
+    position: relative;
+  
+    @include media('<lg') {
+      background-color: $c-white;
+  
+      #generic & {
+        border-bottom: 1px solid $grey-light;
+      }
+  
+      &.header--nav-open {
+        border-bottom: none;
+      }
     }
-
-    &__title {
-        @include t-h2;
-        color: $c-white;
-
-        .banner--announcement & {
-            color: $purple;
-            max-width: rem(534px);
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .banner--promotion & {
-            color: $blue;
-        }
+  
+    &__branding {
+      position: relative;
+  
+      @include media('<md') {
+        padding-bottom: rem(24px);
+        padding-top: rem(24px);
+      }
+  
+      @include media('>=md', '<lg') {
+        height: rem($header-height);
+        padding-bottom: rem(18px);
+        padding-top: rem(18px);
+      }
     }
-
-    &__message {
-        @include t-intro-lg;
-        color: $c-white;
-
-        p {
-            margin-bottom: rem($spacer-small);
-        }
-
-        > *:last-child {
-            margin-bottom: 0;
-        }
-
-        .banner--contacts & {
-            @include t-22-23;
-        }
-
-        .banner--announcement & {
-            color: $c-dark;
-            @include media('<md') {
-                @include t-20-26;
-            }
-        }
-
-        .banner--promotion & {
-            @include t-22-23;
-            color: $grey-dark;
-        }
+  
+    &__branding-link {
+      display: block;
+      width: rem(190px);
+  
+      @include media('>=md') {
+        width: rem(248px);
+      }
+  
+      @include media('>=lg') {
+        left: rem($container-padding);
+        position: absolute;
+        top: rem(47px + 30px);
+        width: rem(304px);
+        z-index: 2;
+      }
     }
-
-    &__cta-message {
-        @include t-20-26;
-        margin-top: rem($spacer-small);
-
-        a:hover {
-            color: $purple;
-            text-decoration: none;
-            border-bottom: 1px solid $purple;
-        }
+  
+    &__branding-image {
+      height: rem(40px);
+  
+      @include media('>=md') {
+        height: rem(53px);
+      }
+  
+      @include media('>=lg') {
+        height: rem(64px);
+      }
     }
-
-    &__list {
-        margin-top: rem($spacer-small);
-        display: flex;
-        justify-content: center;
-
-        @include media('<md') {
-            align-items: center;
-            flex-direction: column;
+  
+    &__show-navigation {
+      @include media('<lg') {
+        position: absolute;
+        right: rem($container-padding - 4px);
+        top: rem(32px - 6px);
+      }
+  
+      @include media('<lg') {
+        .header--nav-open & {
+          left: -9999px;
         }
+      }
+  
+      @include media('>=lg') {
+        display: none;
+      }
     }
-
-    &__list-item {
+  
+    &__show-navigation-icon {
+      @include media('<lg') {
+        width: rem(26px);
+      }
+    }
+  
+    &__nav {
+      display: flex;
+      flex-direction: column;
+  
+      @include media('>=lg') {
         position: relative;
-
-        &--phone {
-            padding-left: rem(35px);
-
-            @include media('>=md') {
-                margin-right:rem(31px);
-            }
-
-            @include media('<md') {
-                margin-bottom:rem($spacer-tiny);
-            }
-            
-            &:before {
-                content: url(../images/phone-icon.svg);
-                position: absolute;
-                width: rem(25px);
-                height: rem(25px);
-                top: 0;
-                left: 0;
-            }
+        z-index: 1;
+  
+        &:before {
+          background-color: $c-white;
+          content: '';
+          display: block;
+          height: 100%;
+          position: absolute;
+          width: 100%;
+          z-index: 2;
         }
-
-        &--email {
-            padding-left: rem(40px);
-            
-            @include media('>=md') {
-                margin-left: rem(31px);
-            }
-            
-            &:before {
-                content: url(../images/mail-icon.svg);
-                position: absolute;
-                width: rem(29px);
-                height: rem(29px);
-                top: rem(4px);
-                left: 0;
-            }
-        }
+      }
     }
-
-    &__list-link {
-        @include t-intro;
-        @include t-light;
-        color: $c-white;
-
-        @include media('<md') {
-            @include t-18-24;
+  
+    &__nav-inner {
+      @include media('<lg') {
+        border-top: 1px solid $c-alto;
+      }
+  
+      @include media('<lg') {
+        background-color: $c-bg-alabaster;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: fixed;
+        top: rem(88px);
+        transform: translateX(-100%);
+        width: 100%;
+        z-index: 10;
+  
+        .header--nav-open & {
+          transform: translateX(0);
         }
-
-        &:hover {
-            color: $c-white;
-            text-decoration: none;
-            border-bottom: 1px solid $c-white;
+      }
+    }
+  
+    &__nav-content {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    &__close {
+      @include media('<lg') {
+        position: absolute;
+        right: rem(-5px + $container-padding);
+        top: rem(-7px + 32px);
+        z-index: 3;
+      }
+  
+      @include media('<lg') {
+        left: -9999px;
+  
+        .header--nav-open & {
+          left: auto;
         }
+      }
+  
+      @include media('>=lg') {
+        @include v-hidden;
+      }
     }
-
-    &--contacts {
-        padding-top: rem(60px);
-        padding-bottom: rem(60px);
-    }
-
-    &--announcement {
-        background-color: $c-white;
-        padding-top: rem(80px);
-        padding-bottom: rem(80px);
-
-        @include media('<md') {
-            padding-top: rem($spacer-small);
-            padding-bottom: rem($spacer-small);
-        }
-    }
-
-    &--promotion {
-        background-color: $c-bg-grey;
-        padding-top: rem($spacer-x-large);
-        padding-bottom: rem($spacer-x-large);
+  
+    &__close-icon {
+      @include media('<lg') {
+        width: rem(24px);
+      }
     }
 }
 
-.content-header {
-    width: 100%;
-    margin: rem(50px) 0;
-
-    .nav__holder {
-        flex: 0 0 100%;
-        padding-left: 0;
-        padding-right: 0;
-        
-        @include media('<=lg') {
-            margin-bottom: rem($spacer-medium);
+.has-admin-bar {
+    .header {
+      &__nav-inner {
+        @include media('<lg') {
+          top: rem(120px);
         }
-    
-        @include media('>lg') {
-          flex: 0 0 rem(258px);
-          margin-right:rem($container-padding);
-        }
+  
+        // @include screen('0', '783px') {
+        //   top: rem(134px);
+        // }
+      }
     }
-
-    h1 {
-        @include t-h1;
-        color: $purple;
-        margin-bottom:rem($spacer-x-large)!important;
-    }
-
-    p {
-        @include t-intro-lg;
-        padding-bottom: rem($spacer-small);
-    }
-
 }
 

@@ -1,0 +1,44 @@
+{% if menu %}
+    <ul class="primary-nav__list{% if class %} {{ class }}{% endif %}{{ classes | join(' ') }}">
+        {% for item in menu %}
+            {% set children = item.get_children %}
+
+            <li class="primary-nav__item {{ item.classes | join(' ') }} {% if children | length > 0 %} js-item-with-children {% endif %}">
+                <a class="js-navigation-link primary-nav__top-link" href="{{ item.link }}">
+                    {{ item.title }}
+                    {% include "atoms/icon.twig" with {
+                        'class' : 'primary-nav__level-1-icon',
+                        'icon' : 'arrow'
+                    } %}
+                </a>
+                {% if children | length > 0 %}
+                    <div class="primary-nav__sub-level">
+                        <div class="primary-nav__sub-level-inner container-fluid">
+                            <div class="primary-nav__back-level">
+                                <button class="primary-nav__back-level-button js-parent-button">Back<span class="v-hidden">to previous level</span></button>
+                            </div>
+                            <div class="primary-nav__sub-level-content">
+                                <div class="primary-nav__parent">
+                                    <a class="primary-nav__parent-link" href="{{ item.link }}">
+                                        <span class="primary-nav__parent-link-text">{{ item.title }}</span>
+                                        {% include "atoms/icon.twig" with {
+                                        'class' : 'primary-nav__parent-link-icon',
+                                        'icon' : 'arrow'
+                                    } %}
+                                    </a>
+                                </div>
+                                <ul class="primary-nav__second-level-list">
+                                    {% for second_level_item in children %}
+                                        <li class="{{ second_level_item.classes | join(' ') }}">
+                                            <a class="primary-nav__sub-link" href="{{ second_level_item.link }}">{{ second_level_item.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

@@ -1,0 +1,49 @@
+.icon-button {
+    @include reset-button;
+    cursor: pointer;
+    display: inline-flex;
+    height: rem(32px);
+    justify-content: center;
+    overflow: hidden;
+    width: rem(32px);
+  
+    &__text {
+      @include v-hidden;
+    }
+  
+    &__icon {
+      path {
+        fill: $purple;
+      }
+    }
+  
+    &:hover {
+      .icon-button__icon {
+        path {
+          fill: $purple-hover;
+        }
+      }
+    }
+  
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  
+    &:disabled {
+      cursor: auto;
+  
+      .icon-button__icon path {
+        fill: $c-alto;
+      }
+  
+      &:hover {
+        .icon-button__icon {
+          path {
+            fill: $c-alto;
+          }
+        }
+      }
+    }
+}
+  
