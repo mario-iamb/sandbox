@@ -12,12 +12,13 @@ var include = require('gulp-include');
 var uglify = require('gulp-uglify');
 var changed = require('gulp-changed');
 
+var babel = require('gulp-babel');
 var babelify = require("babelify");
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 
-//var lost = require('lost');
 var browserSync = require('browser-sync').create();
+var buffer = require('vinyl-buffer');
 var reload = browserSync.reload;
 
 var localDevUrl = 'http://localhost:8888/sandbox/';
@@ -44,15 +45,18 @@ gulp.task('sass', function() {
 
 /* Build JS */
 gulp.task('js', function() {
-    return browserify('./packages/js/script.js')
+	return browserify('./packages/js/script.js')
+		.transform("babelify", { presets: ["es2015", 'stage-2'] })
         .bundle()
-        .pipe(source('script.js'))
+		.pipe(source('script.js'))
+		.pipe(buffer())
+        .pipe(sourcemaps.init())
 		.pipe(gulp.dest('../assets/js'));
 		
 });
 
 
-gulp.task('default', ['sass'], function () {
+gulp.task('default', ['sass','js'], function () {
 	browserSync.init({
 		files: ['{site}/**/*.php', '*.php'],
  		proxy: localDevUrl,
