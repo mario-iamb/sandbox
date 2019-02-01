@@ -20,8 +20,29 @@ var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync').create();
 var buffer = require('vinyl-buffer');
 var reload = browserSync.reload;
+var critical = require('critical');
 
 var localDevUrl = 'http://localhost:8888/sandbox/';
+
+var dimensionSettings = [{
+    width: 639,
+    height: 667
+}, {
+    width: 641,
+    height: 1024
+}, {
+    width: 1024,
+    height: 1366
+}, {
+    width: 1025,
+    height: 1366
+}, {
+    width: 1441,
+    height: 900
+}, {
+    width: 1921,
+    height: 1175
+}];
 
 
 /* Build CSS */
@@ -35,11 +56,9 @@ gulp.task('sass', function() {
 			}
 		}))
 		.pipe(sourcemaps.init())
-		// .pipe(postcss([
-        //     lost()
-        // ]))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('../assets/css'))
+		.pipe(cssnano())
+		.pipe(gulp.dest('../assets/css'))
         .pipe(reload({stream:true}));
 });  
 
@@ -53,6 +72,10 @@ gulp.task('js', function() {
         .pipe(sourcemaps.init())
 		.pipe(gulp.dest('../assets/js'));
 		
+});
+
+gulp.task('critical', function (cb) {
+
 });
 
 
