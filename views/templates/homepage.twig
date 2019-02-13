@@ -111,4 +111,24 @@
         }
     }  %}
 
+    {% include 'molecules/cta-gallery.twig' with {
+        colors: ['peach', 'water', 'alabaster'],
+        content: {
+            items: [
+                {
+                    title: 'First',
+                },
+                {
+                    title: 'Seocond',
+                },
+                {
+                    title: 'Third',
+                },
+                {
+                    title: 'Fourth',
+                }
+            ]
+        }
+    } %}
+
 {% endblock %}

@@ -1,0 +1,28 @@
+.divider {
+    &--vertical {
+        width: rem(72px);
+        //height: rem(350px);
+        position: relative;
+        background-color: red;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: rem(24px);
+            height: 100%;
+            background-color: blue;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: rem(24px);
+            height: 100%;
+            background-color: green;
+        }
+    }
+}

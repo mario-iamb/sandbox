@@ -1,0 +1,15 @@
+<section class="cta-gallery">
+    <div class="container-fluid">
+
+        {% for item in content.items %}
+            <div class="row row-no-gutters">
+                <div class="col">{{item.title}}</div>
+                {% include 'atoms/divider.twig' with {
+                    type: 'vertical',
+                    color: colors ? colors[loop.index0 % colors|length],
+                } %}
+                <div class="col">{{item.title}}</div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
