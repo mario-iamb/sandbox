@@ -146,6 +146,7 @@
         background-color: $c-white;
         padding-top: rem(80px);
         padding-bottom: rem(80px);
+        border: 2px dotted $blue;
 
         @include media('<md') {
             padding-top: rem($spacer-small);
