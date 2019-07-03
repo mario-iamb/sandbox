@@ -146,7 +146,7 @@
         background-color: $c-white;
         padding-top: rem(80px);
         padding-bottom: rem(80px);
-        border: 2px dotted $blue;
+        border: 2px dotted $c-error;
 
         @include media('<md') {
             padding-top: rem($spacer-small);
